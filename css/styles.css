@@ -218,6 +218,19 @@ header span em { color: var(--vermelho); font-style: normal; }
 .incluso-item strong { display: block; margin-bottom: 3px; }
 .incluso-item span.desc { color: var(--cinza); font-size: 0.93rem; }
 
+/* DEPOIMENTOS (placeholder — trocar por prints reais) */
+#depoimentos { background: var(--off); padding: 60px 0; }
+#depoimentos h2 { font-size: 1.7rem; font-weight: 700; text-align: center; margin-bottom: 10px; line-height: 1.3; }
+.dep-sub { text-align: center; color: var(--cinza); font-size: 0.95rem; margin-bottom: 30px; line-height: 1.6; }
+.dep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.dep-placeholder {
+  aspect-ratio: 4/5; border: 1.5px dashed var(--cinza-claro); border-radius: 4px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; padding: 20px; text-align: center; background: #fff;
+}
+.dep-placeholder svg { width: 28px; height: 28px; stroke: var(--cinza-claro); fill: none; stroke-width: 1.6; }
+.dep-placeholder span { font-size: 0.82rem; color: var(--cinza-claro); line-height: 1.5; }
+
 /* NAO ESPERE */
 #nao-espere { background: var(--preto); padding: 60px 0; text-align: center; }
 #nao-espere h2 { font-size: 1.7rem; font-weight: 700; color: #fff; margin-bottom: 22px; line-height: 1.3; }
