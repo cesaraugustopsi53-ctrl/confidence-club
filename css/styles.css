@@ -181,7 +181,7 @@ header span em { color: var(--vermelho); font-style: normal; }
 .aplic-card h3 em { color: var(--vermelho); font-style: normal; }
 .aplic-card ul { list-style: none; margin-bottom: 16px; }
 .aplic-card li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.95rem; color: var(--cinza); line-height: 1.55; }
-.aplic-card li::before { content: '—'; position: absolute; left: 0; color: var(--vermelho); }
+.aplic-card li::before { content: '•'; position: absolute; left: 0; color: var(--vermelho); }
 .aplic-card .fecho { font-size: 0.98rem; color: var(--preto); font-weight: 600; line-height: 1.6; margin-bottom: 0; }
 
 /* AUTORIDADE */
