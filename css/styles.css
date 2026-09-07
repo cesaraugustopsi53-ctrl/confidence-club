@@ -134,16 +134,9 @@ header span em { color: var(--vermelho); font-style: normal; }
 .negociar-list p { color: var(--preto); margin-bottom: 10px; font-weight: 600; }
 .negociar-list p:last-child { margin-bottom: 0; }
 .forca-quote { text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--preto); margin: 24px 0; line-height: 1.5; }
-.temas-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0; justify-content: center; }
-.tema-pill { background: var(--preto); color: #fff; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; border-radius: 50px; }
 .destaque-final { text-align: center; font-weight: 700; color: var(--preto); font-size: 1.05rem; margin-top: 10px; }
 
-/* VIDA LA DENTRO */
-#vida-dentro { background: var(--off); padding: 64px 0; }
-#vida-dentro .eyebrow { text-align: center; }
-#vida-dentro h2 { font-size: 1.7rem; font-weight: 700; color: var(--preto); text-align: center; margin-bottom: 14px; line-height: 1.3; }
-.vida-intro { text-align: center; color: var(--cinza); margin-bottom: 30px; line-height: 1.6; font-size: 1rem; }
-.vida-card { background: #fff; border-left: 3px solid var(--vermelho); border-radius: 4px; padding: 28px 24px; margin-bottom: 16px; }
+.vida-card { background: var(--off); border-left: 3px solid var(--vermelho); border-radius: 4px; padding: 28px 24px; margin-bottom: 16px; }
 .vida-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--preto); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
 .vida-card p { font-size: 0.97rem; color: var(--cinza); line-height: 1.7; margin-bottom: 0; }
 
