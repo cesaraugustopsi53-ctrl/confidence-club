@@ -1,20 +1,21 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --preto: #0b0b0b;
+  --preto: #3d0508;
   --branco: #ffffff;
-  --off: #f5f4f2;
-  --cinza: #6b6b6b;
-  --cinza-claro: #a3a3a3;
-  --vermelho: #d7263d;
-  --vermelho-escuro: #a81729;
-  --linha: #e2e0dc;
+  --off: #faf8f5;
+  --cinza: #7a6a63;
+  --cinza-claro: #b3a49c;
+  --vermelho: #6b1423;
+  --vermelho-escuro: #4a0e17;
+  --dourado: #c9a877;
+  --linha: #e6ddd3;
 }
 
 html { scroll-behavior: smooth; }
 body { font-family: 'Manrope', sans-serif; background: var(--branco); color: var(--preto); overflow-x: hidden; }
 
-h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+h1, h2, h3, .serif { font-family: 'Libre Bodoni', serif; }
 
 .container { max-width: 560px; margin: 0 auto; padding: 0 22px; }
 .container-wide { max-width: 900px; }
@@ -28,12 +29,12 @@ header {
   background: var(--preto); padding: 18px 22px;
 }
 header span { color: #fff; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.14em; text-transform: uppercase; }
-header span em { color: var(--vermelho); font-style: normal; }
+header span em { color: var(--dourado); font-style: normal; }
 
 /* BUTTONS */
 .btn-primary {
   display: block; width: 100%;
-  background: var(--vermelho); color: #fff;
+  background: var(--vermelho); color: var(--dourado);
   font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.02rem;
   padding: 18px 24px; border-radius: 4px; border: none; cursor: pointer;
   text-decoration: none; text-align: center; letter-spacing: 0.02em;
@@ -49,11 +50,11 @@ header span em { color: var(--vermelho); font-style: normal; }
 .btn-outline:hover { background: var(--preto); color: #fff; }
 
 .btn-outline-white {
-  display: inline-block; border: 1.5px solid #fff; color: #fff;
+  display: inline-block; border: 1.5px solid var(--dourado); color: var(--dourado);
   font-weight: 700; font-size: 0.92rem; padding: 13px 30px; border-radius: 4px;
   text-decoration: none; letter-spacing: 0.02em; transition: all 0.2s;
 }
-.btn-outline-white:hover { background: #fff; color: var(--preto); }
+.btn-outline-white:hover { background: var(--dourado); color: var(--preto); }
 
 /* SECTION TITLES */
 .section-title {
@@ -137,7 +138,7 @@ header span em { color: var(--vermelho); font-style: normal; }
 .destaque-final { text-align: center; font-weight: 700; color: var(--preto); font-size: 1.05rem; margin-top: 10px; }
 
 .vida-card { background: var(--off); border-left: 3px solid var(--vermelho); border-radius: 4px; padding: 28px 24px; margin-bottom: 16px; }
-.vida-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--preto); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+.vida-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--preto); margin-bottom: 10px; font-family: 'Libre Bodoni', serif; }
 .vida-card p { font-size: 0.97rem; color: var(--cinza); line-height: 1.7; margin-bottom: 0; }
 
 /* PILARES */
@@ -155,7 +156,7 @@ header span em { color: var(--vermelho); font-style: normal; }
 #aplicacoes { padding: 64px 0; }
 #aplicacoes h2 { font-size: 1.7rem; font-weight: 700; text-align: center; margin-bottom: 34px; line-height: 1.3; }
 .aplic-card { background: var(--off); border-radius: 4px; padding: 30px 24px; margin-bottom: 20px; }
-.aplic-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+.aplic-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; font-family: 'Libre Bodoni', serif; }
 .aplic-card h3 em { color: var(--vermelho); font-style: normal; }
 .aplic-card ul { list-style: none; margin-bottom: 16px; }
 .aplic-card li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.95rem; color: var(--cinza); line-height: 1.55; }
@@ -210,12 +211,12 @@ header span em { color: var(--vermelho); font-style: normal; }
 }
 .oferta-badge {
   position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-  background: var(--vermelho); color: #fff; font-weight: 700; font-size: 0.82rem;
+  background: var(--dourado); color: var(--preto); font-weight: 700; font-size: 0.82rem;
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 9px 22px; border-radius: 50px; white-space: nowrap;
 }
-.oferta-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 24px; font-family: 'Playfair Display', serif; }
-.preco-valor { font-size: 2.6rem; font-weight: 800; color: var(--preto); text-align: center; line-height: 1; margin-bottom: 6px; font-family: 'Playfair Display', serif; }
+.oferta-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 24px; font-family: 'Libre Bodoni', serif; }
+.preco-valor { font-size: 2.6rem; font-weight: 800; color: var(--preto); text-align: center; line-height: 1; margin-bottom: 6px; font-family: 'Libre Bodoni', serif; }
 .preco-label { font-size: 0.95rem; color: var(--cinza); text-align: center; margin-bottom: 26px; }
 .garantia-mini {
   display: flex; align-items: flex-start; gap: 14px;
@@ -228,7 +229,7 @@ header span em { color: var(--vermelho); font-style: normal; }
 /* GARANTIA SECAO */
 #garantia { padding: 0 0 60px; }
 .garantia-box { background: var(--off); border-radius: 4px; padding: 40px 26px; text-align: center; }
-.garantia-box h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+.garantia-box h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; font-family: 'Libre Bodoni', serif; }
 .garantia-box p { font-size: 0.97rem; color: var(--cinza); line-height: 1.7; margin-bottom: 0; }
 
 /* FAQ */
@@ -248,7 +249,7 @@ header span em { color: var(--vermelho); font-style: normal; }
 
 /* CTA FINAL */
 #cta-final { background: var(--preto); padding: 64px 0; text-align: center; }
-#cta-final h2 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 18px; line-height: 1.25; font-family: 'Playfair Display', serif; }
+#cta-final h2 { font-size: 1.9rem; font-weight: 700; color: #fff; margin-bottom: 18px; line-height: 1.25; font-family: 'Libre Bodoni', serif; }
 #cta-final p { font-size: 1rem; color: rgba(255,255,255,0.72); margin-bottom: 32px; line-height: 1.65; }
 
 /* FOOTER */
