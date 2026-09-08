@@ -172,7 +172,8 @@ header span em { color: var(--dourado); font-style: normal; }
 #autoridade { padding: 0 0 64px; }
 .aut-photo { overflow: hidden; margin-bottom: 30px; }
 .aut-photo img { width: 100%; display: block; }
-.aut-eyebrow { text-align: center; }
+.aut-nome { text-align: center; font-family: 'Libre Bodoni', serif; font-size: 1.3rem; font-weight: 700; color: var(--preto); margin-bottom: 4px; }
+.aut-credencial { text-align: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vermelho); margin-bottom: 20px; }
 #autoridade h2 { font-size: 1.5rem; font-weight: 700; text-align: center; line-height: 1.35; margin-bottom: 22px; }
 #autoridade p { font-size: 0.98rem; color: var(--cinza); line-height: 1.75; margin-bottom: 16px; }
 #autoridade p.quote { font-weight: 600; color: var(--preto); font-size: 1.08rem; text-align: center; margin: 20px 0; }
