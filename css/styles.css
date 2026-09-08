@@ -137,6 +137,11 @@ header span em { color: var(--dourado); font-style: normal; }
 .forca-quote { text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--preto); margin: 24px 0; line-height: 1.5; }
 .destaque-final { text-align: center; font-weight: 700; color: var(--preto); font-size: 1.05rem; margin-top: 10px; }
 
+.plataforma-preview { margin: 28px 0; }
+.plataforma-preview img { display: block; width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(61,5,8,0.18); }
+.plataforma-preview img + img { margin-top: 14px; }
+.plataforma-caption { display: block; text-align: center; font-size: 0.82rem; color: var(--vermelho); font-weight: 600; margin-top: 12px; letter-spacing: 0.02em; }
+
 .vida-card { background: var(--off); border-left: 3px solid var(--vermelho); border-radius: 4px; padding: 28px 24px; margin-bottom: 16px; }
 .vida-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--preto); margin-bottom: 10px; font-family: 'Libre Bodoni', serif; }
 .vida-card p { font-size: 0.97rem; color: var(--cinza); line-height: 1.7; margin-bottom: 0; }
