@@ -3,349 +3,574 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>The Confidence Club | Thais Ayumi</title>
 
-  <!-- Open Graph -->
   <meta property="og:title" content="The Confidence Club | Thais Ayumi">
   <meta property="og:description" content="Se torne a mulher mais confiante que você conhece. Uma comunidade viva para construir autoestima, autoimagem e autoconfiança.">
-  <meta property="og:image" content="https://thaisayumi.com.br/img/banner-confidence-club.jpg">
+  <meta property="og:image" content="https://thaisayumi.com.br/img/banner.jpg">
   <meta property="og:url" content="https://thaisayumi.com.br/">
   <meta property="og:type" content="website">
   <meta name="description" content="The Confidence Club. Comunidade viva de mulheres construindo autoestima, autoimagem e autoconfiança, com Thais Ayumi.">
+  <meta name="theme-color" content="#2A0509">
+  <script>document.documentElement.classList.add('js')</script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,600;0,700;0,800;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="image" href="img/hero-bg.webp">
+  <link rel="preload" as="image" href="img/hero-cut.webp">
+  <link rel="stylesheet" href="css/styles.css?v=20261103b">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
 <!--
   PENDÊNCIAS antes de divulgar:
-  1. Adicionar seção de depoimentos quando houver prints reais (removida por enquanto, sem conteúdo)
-  2. Confirmar duração/modelo de acesso e atualizar a resposta do FAQ correspondente
-  3. [feito] Domínio thaisayumi.com.br comprado no Hostgator, CNAME configurado e DNS orientado, HTTPS ativo
-  4. [feito] Link de checkout do TheMembers adicionado ao botão de compra (#btn-oferta)
-  5. [feito] Preço parcelado (12x R$41,04) como destaque principal (hero, oferta, sticky bar), R$397 à vista como secundário
-  6. [feito] Prints reais da plataforma (tela do curso + módulos) na seção Comunidade, mostrando o Club por dentro
+  1. [feito] Depoimentos com prints reais (seção #depoimentos)
+  2. Confirmar duração/modelo de acesso (FAQ)
+  3. Trocar as imagens marcadas com data-magnific pelos still-lifes do Magnific (ver MAGNIFIC-PROMPTS.md)
 -->
 
+<!-- Ícones (Lucide, ISC) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-messages" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 1.5c.4 4.9 2.2 8.7 10.5 10.5C14.2 13.8 12.4 17.6 12 22.5 11.6 17.6 9.8 13.8 1.5 12 9.8 10.2 11.6 6.4 12 1.5Z"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></symbol>
+  </defs>
+</svg>
+
 <!-- HEADER -->
-<header>
-  <div class="container">
-    <span>The <em>Confidence</em> Club</span>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#topo" class="nav-logo" aria-label="The Confidence Club"><img src="img/logo-gold.png" alt="The Confidence Club" width="712" height="156"></a>
+    <a href="#oferta" class="btn btn-gold btn-sm">Entrar no Club <svg class="i"><use href="#i-arrow"/></svg></a>
   </div>
 </header>
 
+<main id="topo">
+
 <!-- HERO -->
-<section id="hero">
-  <div class="container">
-    <h1>Se torne a mulher mais confiante que você conhece.</h1>
-    <p class="sub">Você já sabe a mulher que quer ser. A que não se diminui para ser escolhida e não abre mão do que deseja por medo de não ser capaz. Está na hora de confiar em si o suficiente para se tornar ela.</p>
-    <a href="#oferta" class="btn-primary" id="btn-hero">Quero entrar para o Confidence Club</a>
-    <p class="hero-parcelas">12x de R$41,04 ou R$397 à vista</p>
+<section class="hero">
+  <div class="hero-stage" aria-hidden="true">
+    <img class="hero-bg" src="img/hero-bg.webp" alt="" width="2400" height="1349" fetchpriority="high">
+    <p class="hero-script" style="--n:10"><span style="--i:0">C</span><span style="--i:1">o</span><span style="--i:2">n</span><span style="--i:3">f</span><span style="--i:4">i</span><span style="--i:5">d</span><span style="--i:6">e</span><span style="--i:7">n</span><span style="--i:8">c</span><span style="--i:9">e</span></p>
+    <img class="hero-cut" src="img/hero-cut.webp" alt="" width="2400" height="1349" fetchpriority="high">
+    <div class="hero-shade"></div>
   </div>
-  <div class="hero-img">
-    <img src="img/hero-thais.jpg" alt="Thais Ayumi" class="bw-photo" fetchpriority="high">
+  <div class="wrap hero-copy">
+    <div class="hero-copy-in">
+      <h1>Se torne a mulher mais <em class="sc">confiante</em> que você conhece.</h1>
+      <p class="hero-sub">Você já sabe a mulher que quer ser. Está na hora de confiar em si o suficiente para se tornar ela.</p>
+      <div class="hero-cta">
+        <a href="#oferta" class="btn btn-gold">Quero entrar para o Club <svg class="i"><use href="#i-arrow"/></svg></a>
+        <p class="hero-price"><strong>12x de R$41,04</strong> ou R$397 à vista</p>
+      </div>
+      <ul class="hero-badges">
+        <li><svg class="i"><use href="#i-shield"/></svg>Garantia de 7 dias</li>
+        <li><svg class="i"><use href="#i-users"/></svg>Comunidade viva</li>
+        <li><svg class="i"><use href="#i-radio"/></svg>Encontros ao vivo mensais</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- BADGES -->
-<section id="badges">
-  <div class="container">
-    <div class="badge-row">
-      <div class="badge-pill"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garantia de 7 dias</div>
-      <div class="badge-pill"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Comunidade viva</div>
-      <div class="badge-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Encontros ao vivo mensais</div>
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Autoestima</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Autoimagem</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Autoconfiança</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Confiante no amor</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Confiante na carreira</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Autoestima</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Autoimagem</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Autoconfiança</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Confiante no amor</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+    <span>Confiante na carreira</span><svg class="i-fill"><use href="#i-sparkle"/></svg>
+  </div>
+</div>
+
+<!-- DEPOIMENTO EM DESTAQUE -->
+<section class="sec sec-paper spot">
+  <div class="wrap spot-grid">
+    <div class="spot-copy">
+      <p class="overline reveal">Depoimento de aluna</p>
+      <blockquote class="spot-quote reveal">
+        <p>“O The Confidence Club <em class="sc">salvou</em> minha vida, minha autoestima.”</p>
+      </blockquote>
+      <p class="spot-ctx reveal">Ela saiu de um casamento de 5 anos. Em outros tempos, teria ligado implorando pra voltar. Dessa vez, escolheu cuidar de si e hoje está orgulhosa de quem está se tornando.</p>
+      <a href="#depoimentos" class="spot-link reveal">Ver mais depoimentos <svg class="i"><use href="#i-arrow-down"/></svg></a>
     </div>
+    <figure class="spot-print reveal">
+      <img src="img/depo/d01.webp" alt="Print de mensagem de aluna: fui casada 5 anos, saí de casa há 1 mês, nunca procurei ele. The Confidence Club salvou minha vida, minha autoestima. Amando minha nova versão." width="1028" height="1600" loading="lazy">
+    </figure>
   </div>
 </section>
 
 <!-- DOR -->
-<section id="dor">
-  <div class="container">
-    <h2>Talvez você já saiba o que deveria fazer.</h2>
-    <p class="talvez">Você sabe quando deveria colocar um limite, ou quando está aceitando menos do que merece.</p>
-    <p class="talvez">Sabe que tem potencial para crescer profissionalmente, ganhar mais, começar aquele projeto.</p>
-    <p class="talvez">Sabe até o que gostaria de dizer… mas mede as palavras por medo da reação dos outros.</p>
-    <p class="talvez destaque">E mesmo sabendo de tudo isso, na hora de agir você trava.</p>
-    <div class="insight-card">
-      <p>O problema talvez não seja você não saber o que fazer.</p>
-      <p>É ainda não confiar em si o suficiente para fazer.</p>
+<section class="sec sec-cream dor">
+  <div class="wrap dor-grid">
+    <figure class="dor-photo reveal-img">
+      <img src="img/thais-espelho-dor.jpg" alt="Thais Ayumi diante de um espelho redondo" width="1060" height="1380" loading="lazy">
+    </figure>
+    <div class="dor-copy">
+      <p class="overline reveal">Talvez você já saiba</p>
+      <h2 class="reveal">Você sabe o que <em class="sc">deveria</em> fazer.</h2>
+      <ol class="know-list">
+        <li class="reveal"><span class="kn">01</span><div><p class="kt">Quando colocar um limite.</p><p class="ks">Ou quando está aceitando menos do que merece.</p></div></li>
+        <li class="reveal"><span class="kn">02</span><div><p class="kt">Que pode crescer e ganhar mais.</p><p class="ks">Começar aquele projeto, tentar a vaga maior.</p></div></li>
+        <li class="reveal"><span class="kn">03</span><div><p class="kt">O que gostaria de dizer.</p><p class="ks">Mas mede cada palavra com medo da reação.</p></div></li>
+      </ol>
+      <p class="dor-fecho reveal">E mesmo assim, na hora de agir, <em class="sc">você trava.</em></p>
     </div>
-    <p class="custo-fecho">Isso não afeta só como você se sente, decide a vida que você vive: o mínimo que você aceita, a validação que você busca, a oportunidade que você não tenta.<br><strong>Você consegue enxergar a mulher que poderia ser. Só ainda não consegue sustentá-la nas suas escolhas.</strong></p>
   </div>
 </section>
 
-<!-- IMAGINE O CONTRARIO -->
-<section id="imagine">
-  <div class="container">
-    <h2>Agora imagine o contrário.<br>Imagine confiar em você.</h2>
-    <div class="imagine-list">
-      <div class="imagine-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Conseguir dizer "isso não serve para mim" sem imediatamente sentir culpa.</div>
-      <div class="imagine-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Não enxergar outra mulher bonita, competente ou bem-sucedida como uma ameaça ao seu próprio valor.</div>
-      <div class="imagine-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Viver um relacionamento sem abandonar quem você é para manter alguém ao seu lado.</div>
-      <div class="imagine-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Se posicionar. Tentar aquela vaga maior. Começar seu projeto. Aparecer. Ganhar mais.</div>
-    </div>
-    <p class="imagine-fecho">Talvez o que você esteja buscando não seja simplesmente "ter mais autoestima". Você quer sentir que pode confiar em si para conduzir a própria vida. E é essa mulher que nós vamos construir no Confidence Club.</p>
+<!-- O PONTO REAL -->
+<section class="truth">
+  <figure class="truth-photo reveal-img">
+    <img src="img/thais-rosas.jpg" alt="Thais Ayumi de olhos fechados abraçando um buquê de rosas vermelhas" width="1300" height="1737" loading="lazy">
+  </figure>
+  <div class="truth-copy">
+    <p class="overline overline-gold reveal">O ponto real</p>
+    <p class="truth-line reveal">Não te falta <span class="strike">saber.</span></p>
+    <p class="truth-line truth-line--big reveal">Te falta <em>confiar em si.</em></p>
+    <p class="truth-small reveal">E isso decide a vida que você vive: o mínimo que você aceita, a validação que você busca, a oportunidade que você nem tenta.</p>
   </div>
 </section>
 
-<!-- COMUNIDADE (manifesto + força do ambiente + presença, fundidos) -->
-<section id="comunidade">
-  <div class="container">
-    <span class="eyebrow manifesto-eyebrow">Bem-vinda</span>
-    <h2>Bem-vinda ao <em>The Confidence Club.</em></h2>
-    <p class="lead">Uma comunidade viva de mulheres decididas a se tornarem a versão mais confiante de si mesmas.</p>
-    <p>O ambiente importa: as pessoas com quem você convive influenciam aquilo que começa a parecer possível para você. Por isso o Confidence Club é um Club de verdade, não apenas mais um curso gravado.</p>
-    <p>Quando você está sozinha, é fácil negociar com a própria insegurança:</p>
-    <div class="negociar-list">
-      <p>"Depois eu faço."</p>
-      <p>"Talvez eu esteja exagerando."</p>
-      <p>"Quando eu estiver mais preparada eu começo."</p>
+<!-- IMAGINE (túnel em perspectiva, ref. 21st perspective-tunnel-hero) -->
+<section class="imagine tunnel" id="imagine">
+  <div class="tunnel-sticky">
+    <div class="tunnel-head">
+      <p class="overline overline-gold">Agora imagine o contrário</p>
+      <h2>Imagine confiar <em class="sc">em você.</em></h2>
+      <p class="tunnel-fecho">Não é só “ter mais autoestima”. É poder confiar em si para conduzir a própria vida. <strong>É essa mulher que a gente constrói no Club.</strong></p>
     </div>
-    <p>Mas alguma coisa muda quando você está cercada por mulheres que também decidiram crescer: uma coloca o limite que você ainda tem medo de colocar, outra começa o projeto que adiou durante anos, outra para de aceitar o mínimo.</p>
-    <p class="forca-quote">"Se ela conseguiu dar esse passo, talvez eu também consiga."</p>
-    <p>Não é uma biblioteca de vídeos que você assiste sozinha. É um espaço que pulsa todo dia, e eu estarei lá com vocês.</p>
-    <div class="plataforma-preview">
-      <img src="img/plataforma-modulos.jpg" alt="Módulos do The Confidence Club: Bases da Autoconfiança, Confiante no Amor, Confiante, Ambiciosa e Realizada">
-      <img src="img/plataforma-curso.jpg" alt="Tela inicial do The Confidence Club dentro da plataforma">
-      <span class="plataforma-caption">Por dentro do Club: sua área exclusiva, com todos os módulos liberados</span>
+    <div class="tunnel-scene">
+      <figure class="polaroid t-card"><img src="img/tunnel/mod-bases.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 70%" data-magnific="imagine-1"><figcaption><span>01</span>Dizer “isso não serve pra mim” sem culpa</figcaption></figure>
+      <figure class="polaroid t-card t-card--deco"><img src="img/tunnel/thais-terno.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 25%"></figure>
+      <figure class="polaroid t-card"><img src="img/tunnel/thais-rosas.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 40%" data-magnific="imagine-2"><figcaption><span>02</span>Ver outra mulher brilhar sem se sentir ameaçada</figcaption></figure>
+      <figure class="polaroid t-card t-card--deco"><img src="img/tunnel/mod-club.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 40%"></figure>
+      <figure class="polaroid t-card"><img src="img/tunnel/mod-amor.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 75%" data-magnific="imagine-3"><figcaption><span>03</span>Amar alguém sem se abandonar</figcaption></figure>
+      <figure class="polaroid t-card t-card--deco"><img src="img/tunnel/thais-espelho.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 25%"></figure>
+      <figure class="polaroid t-card"><img src="img/tunnel/mod-ambiciosa.jpg" alt="" loading="eager" decoding="async" style="object-position:50% 60%" data-magnific="imagine-4"><figcaption><span>04</span>Se posicionar, aparecer e ganhar mais</figcaption></figure>
     </div>
-    <div class="vida-card">
-      <h3>Nosso clube</h3>
-      <p>Você conversa com outras mulheres que têm o mesmo objetivo, troca experiências e se reconhece em histórias que parecem a sua.</p>
+    <div class="tunnel-progress" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- COMUNIDADE -->
+<section class="sec sec-cream club">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="overline">Bem-vinda</p>
+      <h2>Um club de verdade, <em class="sc">não</em> mais um curso gravado.</h2>
+      <p class="lead">Uma comunidade viva de mulheres decididas a se tornarem a versão mais confiante de si mesmas.</p>
+    </header>
+
+    <div class="versus">
+      <article class="vs vs-alone reveal">
+        <p class="vs-title">Sozinha, você negocia com a insegurança</p>
+        <ul class="strike-list">
+          <li><svg class="i"><use href="#i-x"/></svg><span>“Depois eu faço.”</span></li>
+          <li><svg class="i"><use href="#i-x"/></svg><span>“Talvez eu esteja exagerando.”</span></li>
+          <li><svg class="i"><use href="#i-x"/></svg><span>“Quando estiver mais preparada, eu começo.”</span></li>
+        </ul>
+      </article>
+      <article class="vs vs-club reveal">
+        <p class="vs-title"><img src="img/logo-gold.png" alt="The Confidence Club" width="712" height="156"></p>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg>Uma coloca o limite que você ainda tem medo de colocar.</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Outra começa o projeto que adiou durante anos.</li>
+          <li><svg class="i"><use href="#i-check"/></svg>Outra para de aceitar o mínimo.</li>
+        </ul>
+        <p class="vs-quote">“Se ela conseguiu, talvez eu também consiga.”</p>
+      </article>
     </div>
-    <div class="vida-card">
-      <h3>Encontros ao vivo e desafios</h3>
-      <p>Eventos ao vivo com a Thais para conversar sobre os temas mais pedidos, e desafios para todas alcançarem seus objetivos e crescerem juntas.</p>
+
+    <div class="inside">
+      <div class="inside-head reveal">
+        <p class="overline">Por dentro do Club</p>
+        <h3>Sua área exclusiva, com todos os módulos liberados.</h3>
+      </div>
+
+      <div class="tablet-stage" data-tablet>
+        <div class="tablet">
+          <div class="tablet-screen">
+            <img class="tablet-hero" src="img/plataforma-curso.jpg" alt="Tela inicial do The Confidence Club dentro da plataforma" width="1600" height="721" loading="lazy">
+            <div class="tablet-row">
+              <p>Módulos</p>
+              <div class="tablet-mods">
+              <figure><img src="img/mod-club.jpg" alt="Módulo Boas-vindas" width="1170" height="2282" loading="lazy"></figure>
+              <figure><img src="img/mod-bases.jpg" alt="Módulo Bases da Autoconfiança" width="1170" height="2282" loading="lazy"></figure>
+              <figure><img src="img/mod-amor.jpg" alt="Módulo Confiante no Amor" width="1170" height="2282" loading="lazy"></figure>
+              <figure><img src="img/mod-ambiciosa.jpg" alt="Módulo Confiante, Ambiciosa e Realizada" width="1170" height="2282" loading="lazy"></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-grid">
+        <article class="feat reveal">
+          <svg class="i"><use href="#i-messages"/></svg>
+          <h4>Comunidade</h4>
+          <p>Converse, troque experiências e se reconheça em histórias parecidas com a sua.</p>
+        </article>
+        <article class="feat reveal">
+          <svg class="i"><use href="#i-radio"/></svg>
+          <h4>Encontros ao vivo</h4>
+          <p>Todo mês, com a Thais, sobre os temas mais pedidos pelas mulheres do Club.</p>
+        </article>
+        <article class="feat reveal">
+          <svg class="i"><use href="#i-flame"/></svg>
+          <h4>Desafios</h4>
+          <p>Para todas colocarem em prática e crescerem juntas.</p>
+        </article>
+      </div>
+
+      <figure class="thais-note reveal">
+        <img src="img/thais-terno.jpg" alt="Thais Ayumi" width="1000" height="1501" loading="lazy">
+        <blockquote>
+          <p>“Eu não quero falar para uma comunidade. Quero liderar uma comunidade da qual eu também faço parte.”</p>
+          <cite>Thais Ayumi</cite>
+        </blockquote>
+      </figure>
     </div>
-    <p class="destaque-final">Eu não quero falar para uma comunidade. Quero liderar uma comunidade da qual eu também faço parte.</p>
   </div>
 </section>
 
 <!-- PILARES -->
-<section id="pilares">
-  <div class="container">
-    <h2>O que você vai desenvolver aqui</h2>
-    <div class="pilar-card">
-      <h3>Autoestima</h3>
-      <p>Para parar de negociar o próprio valor de acordo com quem te escolhe, quem te aprova ou quem reconhece você.</p>
+<section class="sec sec-ink pilares">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="overline overline-gold">Os três pilares</p>
+      <h2>O que você vai <em class="sc">desenvolver</em> aqui</h2>
+    </header>
+
+    <div class="pilar-grid">
+      <article class="pilar reveal">
+        <figure><img src="img/thais-rosas.jpg" alt="" width="1085" height="1450" loading="lazy" style="object-position:85% 70%" data-magnific="pilar-autoestima"></figure>
+        <span class="pilar-n">01</span>
+        <h3>Autoestima</h3>
+        <p>Parar de negociar o próprio valor de acordo com quem te escolhe ou te aprova.</p>
+      </article>
+      <article class="pilar reveal">
+        <figure><img src="img/thais-espelho.jpg" alt="" width="1000" height="1500" loading="lazy" style="object-position:50% 22%" data-magnific="pilar-autoimagem"></figure>
+        <span class="pilar-n">02</span>
+        <h3>Autoimagem</h3>
+        <p>Uma relação mais segura com a mulher que você vê no espelho, e com quem acredita ser.</p>
+      </article>
+      <article class="pilar reveal">
+        <figure><img src="img/mod-club.jpg" alt="" width="585" height="1141" loading="lazy" style="object-position:50% 40%" data-magnific="pilar-autoconfianca"></figure>
+        <span class="pilar-n">03</span>
+        <h3>Autoconfiança</h3>
+        <p>Confiar na sua capacidade de escolher, agir, se posicionar e sustentar suas decisões.</p>
+      </article>
     </div>
-    <div class="pilar-card">
-      <h3>Autoimagem</h3>
-      <p>Para transformar a maneira como você se enxerga e construir uma relação mais segura com a mulher que você vê no espelho, e com quem você acredita ser.</p>
-    </div>
-    <div class="pilar-card">
-      <h3>Autoconfiança</h3>
-      <p>Para confiar na sua capacidade de escolher, agir, tentar, se posicionar e lidar com as consequências das suas decisões.</p>
-    </div>
-    <p class="pilares-fecho">E então vamos levar tudo isso para os lugares em que a insegurança mais aparece: nos seus relacionamentos e na sua vida profissional.</p>
+
+    <p class="pilares-fecho reveal">E levamos tudo isso para onde a insegurança mais aparece <svg class="i"><use href="#i-arrow-down"/></svg></p>
   </div>
 </section>
 
-<!-- APLICACOES -->
-<section id="aplicacoes">
-  <div class="container">
-    <h2>Onde essa confiança vai aparecer</h2>
-    <div class="aplic-card">
-      <h3>Confiante <em>no amor</em></h3>
-      <p>Para a mulher que quer parar de:</p>
-      <ul>
-        <li>Aceitar migalhas por medo de ficar sozinha</li>
-        <li>Se comparar com qualquer mulher que aparece</li>
-        <li>Viver hipervigilante tentando interpretar cada ação do parceiro</li>
-        <li>Ter medo constante de ser substituída</li>
-        <li>Se diminuir para caber em uma relação</li>
-        <li>Saber que precisa colocar um limite, mas não conseguir sustentá-lo</li>
-      </ul>
-      <p class="fecho">Não para se tornar uma mulher que "não precisa de ninguém". Mas para conseguir amar alguém sem precisar se abandonar para isso.</p>
-    </div>
-    <div class="aplic-card">
-      <h3>Confiante <em>na vida profissional</em></h3>
-      <p>Para a mulher que pensa: "Eu sei que tenho potencial, mas me sinto travada." Que quer crescer, ganhar mais, mudar de carreira, empreender, aparecer, estudar ou buscar oportunidades maiores… mas ainda duvida se é capaz.</p>
-      <p class="fecho">Aqui nós vamos trabalhar a mulher por trás da carreira. Porque muitas vezes não falta competência. Falta confiança para ocupar o espaço que a sua competência já permitiria ocupar.</p>
+<!-- APLICAÇÕES -->
+<section class="sec sec-cream aplic">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="overline">Onde ela aparece</p>
+      <h2>Do amor à <em class="sc">carreira</em></h2>
+    </header>
+    <div class="door-grid">
+      <article class="door reveal">
+        <img src="img/door-amor.jpg" alt="" width="1168" height="1620" loading="lazy">
+        <div class="door-body">
+          <p class="overline overline-gold">Nos relacionamentos</p>
+          <h3>Confiante <em>no amor</em></h3>
+          <p class="door-intro">Para parar de:</p>
+          <ul class="door-list">
+            <li><svg class="i"><use href="#i-x"/></svg>Aceitar migalhas por medo de ficar sozinha</li>
+            <li><svg class="i"><use href="#i-x"/></svg>Se comparar com qualquer mulher</li>
+            <li><svg class="i"><use href="#i-x"/></svg>Viver hipervigilante com o parceiro</li>
+            <li><svg class="i"><use href="#i-x"/></svg>Ter medo de ser substituída</li>
+            <li><svg class="i"><use href="#i-x"/></svg>Se diminuir para caber na relação</li>
+          </ul>
+          <p class="door-fecho">Para amar alguém <em>sem precisar se abandonar.</em></p>
+        </div>
+      </article>
+      <article class="door reveal">
+        <img src="img/door-carreira.jpg" alt="" width="1168" height="1723" loading="lazy">
+        <div class="door-body">
+          <p class="overline overline-gold">Na carreira</p>
+          <h3>Confiante <em>na vida profissional</em></h3>
+          <p class="door-intro">Para, enfim:</p>
+          <ul class="door-chips">
+            <li>Crescer</li><li>Ganhar mais</li><li>Mudar de carreira</li><li>Empreender</li><li>Aparecer</li><li>Buscar oportunidades maiores</li>
+          </ul>
+          <p class="door-fecho">Muitas vezes não falta competência. Falta <em>confiança para ocupar o espaço.</em></p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- AUTORIDADE -->
-<section id="autoridade">
-  <div class="aut-photo">
-    <img src="img/autoridade-thais.jpg" alt="Thais Ayumi" class="bw-photo">
-  </div>
-  <div class="container">
-    <p class="aut-nome">Thais Ayumi</p>
-    <p class="aut-credencial">Psicanalista</p>
-    <h2>"Eu não comecei sendo a mulher que você vê hoje."</h2>
-    <p>Eu já fui extremamente insegura. Já vivi dependência emocional. Já estive em um relacionamento abusivo. Já existiu uma versão minha que sabia racionalmente que determinadas situações me faziam mal e, ainda assim, tinha dificuldade de sair delas.</p>
-    <p class="quote">"Eu sei que não mereço isso, mas continuo aceitando." Eu entendo.<br>"Eu sei o que deveria fazer, mas não consigo." Eu entendo.</p>
-    <div class="aut-divider"></div>
-    <p>Foi também reconstruindo minha própria relação comigo que comecei a entender algo que hoje atravessa profundamente o meu trabalho: confiança não é nascer sendo uma mulher segura. É construir uma relação consigo mesma forte o suficiente para não precisar continuar se abandonando por medo.</p>
-    <p class="aut-assinatura">Foi essa mulher que eu precisei construir. É esse processo que quero conduzir com vocês.</p>
+<section class="sec sec-paper autor">
+  <div class="wrap autor-grid">
+    <figure class="autor-photo reveal-img">
+      <img src="img/thais-terno.jpg" alt="Thais Ayumi" width="1000" height="1501" loading="lazy">
+      <figcaption><span class="autor-name">Thais Ayumi</span><span class="autor-cred">Psicanalista · fundadora do Club</span></figcaption>
+    </figure>
+    <div class="autor-copy">
+      <p class="overline reveal">Quem conduz</p>
+      <h2 class="reveal">“Eu não comecei sendo a mulher que você vê <em class="sc">hoje.</em>”</h2>
+
+      <ol class="timeline reveal">
+        <li>Já fui extremamente insegura.</li>
+        <li>Já vivi dependência emocional.</li>
+        <li>Já estive em um relacionamento abusivo.</li>
+        <li class="is-now">Reconstruí minha relação comigo. É esse processo que eu conduzo com vocês.</li>
+      </ol>
+
+      <blockquote class="autor-quote reveal">
+        <p>“Eu sei que não mereço isso, mas continuo aceitando.” <span>Eu entendo.</span></p>
+        <p>“Eu sei o que deveria fazer, mas não consigo.” <span>Eu entendo.</span></p>
+      </blockquote>
+
+      <p class="autor-belief" data-text-reveal>Confiança não é nascer segura. É construir uma relação consigo mesma forte o suficiente para não precisar continuar se abandonando por medo.</p>
+      <p class="signature reveal" aria-hidden="true">Thais Ayumi</p>
+    </div>
   </div>
 </section>
 
 <!-- PARA QUEM -->
-<section id="para-quem">
-  <div class="container">
-    <h2>O Confidence Club é para você que…</h2>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sente que existe uma mulher muito maior dentro de você, mas ainda não consegue acessá-la em todas as áreas da sua vida</div>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sabe que merece mais nos relacionamentos, mas tem dificuldade de sustentar limites</div>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tem potencial profissional, mas sente que sua própria insegurança está te segurando</div>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pensa demais antes de tomar decisões e depois continua questionando se escolheu certo</div>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Se compara, se cobra e frequentemente sente que não é suficiente</div>
-    <div class="para-quem-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Está cansada de apenas saber o que deveria fazer e quer começar a se tornar a mulher capaz de fazer</div>
+<section class="sec sec-cream paraquem">
+  <div class="wrap pq-layout">
+    <figure class="pq-photo reveal-img">
+      <img src="img/thais-poltrona.jpg" alt="Thais Ayumi sentada em uma poltrona de couro" width="1170" height="1986" loading="lazy">
+    </figure>
+    <div class="pq-copy">
+      <p class="overline reveal">Para quem é</p>
+      <h2 class="reveal">O Club é para você <em class="sc">que…</em></h2>
+      <ul class="pq-list">
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-crown"/></svg></span><p>Sente que existe uma mulher muito maior dentro de você</p></li>
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-heart"/></svg></span><p>Sabe que merece mais, mas não consegue sustentar limites</p></li>
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-briefcase"/></svg></span><p>Tem potencial, mas sente a insegurança te segurando</p></li>
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-rotate"/></svg></span><p>Pensa demais antes de decidir, e depois ainda se questiona</p></li>
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-scale"/></svg></span><p>Se compara, se cobra e sente que nunca é suficiente</p></li>
+        <li class="reveal"><span class="pq-ico"><svg class="i"><use href="#i-flame"/></svg></span><p>Cansou de só saber o que fazer e quer, enfim, fazer</p></li>
+      </ul>
+      <div class="pq-cta reveal">
+        <p>Se você se reconheceu em pelo menos uma dessas, <em>o seu lugar é aqui.</em></p>
+        <a href="#oferta" class="btn btn-gold">Quero entrar para o Club <svg class="i"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- NAO PRECISA ESPERAR -->
-<section id="nao-espere">
-  <div class="container">
-    <h2>Você não precisa esperar se sentir pronta.</h2>
-    <p>Existe uma armadilha na insegurança: esperar confiança para agir. Mas confiança também é construída enquanto você age, a cada limite que sustenta, a cada decisão que toma, a cada vez que escolhe não se abandonar.</p>
-    <p class="evidencia">Pouco a pouco, você começa a acumular uma evidência muito poderosa: "Eu posso confiar em mim."</p>
+<!-- NÃO ESPERE -->
+<section class="pronta">
+  <div class="pronta-bg" aria-hidden="true"><img src="img/thais-terno.jpg" alt="" width="1000" height="1501" loading="lazy" data-parallax="0.08"></div>
+  <div class="wrap pronta-in reveal">
+    <h2>Você não precisa esperar se sentir <em class="sc">pronta.</em></h2>
+    <p>Confiança se constrói enquanto você age: a cada limite que sustenta, a cada decisão que toma, a cada vez que escolhe não se abandonar.</p>
+    <p class="pronta-script">Eu posso confiar em mim.</p>
   </div>
 </section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec sec-paper depo-sec" id="depoimentos">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="overline">Depoimentos</p>
+      <h2>O que elas estão <em class="sc">vivendo</em> no Club</h2>
+      <p class="lead">Mensagens reais das alunas, do jeito que chegaram.</p>
+    </header>
+  </div>
+  <div class="depo-track" tabindex="0" aria-label="Depoimentos das alunas">
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="0" aria-label="Ampliar depoimento 1"><img src="img/depo/d01.webp" alt="Depoimento de aluna do The Confidence Club" width="1028" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="1" aria-label="Ampliar depoimento 2"><img src="img/depo/d02.webp" alt="Depoimento de aluna do The Confidence Club" width="1206" height="534" loading="lazy" draggable="false"></button>
+        <button type="button" class="depo" data-i="2" aria-label="Ampliar depoimento 3"><img src="img/depo/d03.webp" alt="Depoimento de aluna do The Confidence Club" width="1074" height="468" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="3" aria-label="Ampliar depoimento 4"><img src="img/depo/d04.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="4" aria-label="Ampliar depoimento 5"><img src="img/depo/d05.webp" alt="Depoimento de aluna do The Confidence Club" width="1054" height="460" loading="lazy" draggable="false"></button>
+        <button type="button" class="depo" data-i="5" aria-label="Ampliar depoimento 6"><img src="img/depo/d06.webp" alt="Depoimento de aluna do The Confidence Club" width="1113" height="457" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="6" aria-label="Ampliar depoimento 7"><img src="img/depo/d07.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="7" aria-label="Ampliar depoimento 8"><img src="img/depo/d08.webp" alt="Depoimento de aluna do The Confidence Club" width="1106" height="531" loading="lazy" draggable="false"></button>
+        <button type="button" class="depo" data-i="8" aria-label="Ampliar depoimento 9"><img src="img/depo/d09.webp" alt="Depoimento de aluna do The Confidence Club" width="1080" height="286" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="9" aria-label="Ampliar depoimento 10"><img src="img/depo/d10.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="10" aria-label="Ampliar depoimento 11"><img src="img/depo/d11.webp" alt="Depoimento de aluna do The Confidence Club" width="1062" height="623" loading="lazy" draggable="false"></button>
+        <button type="button" class="depo" data-i="11" aria-label="Ampliar depoimento 12"><img src="img/depo/d12.webp" alt="Depoimento de aluna do The Confidence Club" width="1002" height="452" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="12" aria-label="Ampliar depoimento 13"><img src="img/depo/d13.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="13" aria-label="Ampliar depoimento 14"><img src="img/depo/d14.webp" alt="Depoimento de aluna do The Confidence Club" width="1022" height="275" loading="lazy" draggable="false"></button>
+        <button type="button" class="depo" data-i="14" aria-label="Ampliar depoimento 15"><img src="img/depo/d15.webp" alt="Depoimento de aluna do The Confidence Club" width="1206" height="1122" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="15" aria-label="Ampliar depoimento 16"><img src="img/depo/d16.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo" data-i="16" aria-label="Ampliar depoimento 17"><img src="img/depo/d17.webp" alt="Depoimento de aluna do The Confidence Club" width="1206" height="969" loading="lazy" draggable="false"></button>
+      </div>
+      <div class="depo-col">
+        <button type="button" class="depo depo--tall" data-i="17" aria-label="Ampliar depoimento 18"><img src="img/depo/d18.webp" alt="Depoimento de aluna do The Confidence Club" width="736" height="1600" loading="lazy" draggable="false"><span class="depo-more"><svg class="i"><use href="#i-expand"/></svg>Ler completo</span></button>
+      </div>
+  </div>
+  <div class="wrap depo-nav">
+    <button type="button" class="depo-btn" data-dir="-1" aria-label="Depoimentos anteriores"><svg class="i"><use href="#i-chev-left"/></svg></button>
+    <div class="depo-bar"><i></i></div>
+    <button type="button" class="depo-btn" data-dir="1" aria-label="Próximos depoimentos"><svg class="i"><use href="#i-chev-right"/></svg></button>
+  </div>
+</section>
+
+<div class="lb" hidden role="dialog" aria-modal="true" aria-label="Depoimento ampliado">
+  <button type="button" class="lb-close" aria-label="Fechar"><svg class="i"><use href="#i-x"/></svg></button>
+  <button type="button" class="lb-arrow lb-prev" aria-label="Anterior"><svg class="i"><use href="#i-chev-left"/></svg></button>
+  <figure class="lb-fig"><img alt="Depoimento de aluna do The Confidence Club"></figure>
+  <button type="button" class="lb-arrow lb-next" aria-label="Próximo"><svg class="i"><use href="#i-chev-right"/></svg></button>
+</div>
 
 <!-- OFERTA -->
-<section id="oferta">
-  <div class="container">
-    <div class="oferta-card">
-      <div class="oferta-badge">Turma aberta</div>
-      <h2 class="oferta-title">Entre para o Confidence Club</h2>
-      <div class="incluso-item" style="border:none; padding-top:0;">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><strong>Jornada de desenvolvimento</strong><span class="desc">Para construir autoestima, autoimagem e autoconfiança, e levar essa segurança para seus relacionamentos e sua vida profissional</span></div>
+<section class="sec sec-cream oferta" id="oferta">
+  <div class="wrap">
+    <div class="offer reveal">
+      <span class="beam" aria-hidden="true"></span>
+      <div class="offer-main">
+        <p class="offer-badge"><i></i>Turma aberta</p>
+        <img class="offer-logo" src="img/logo-gold.png" alt="The Confidence Club" width="712" height="156" loading="lazy">
+        <ul class="offer-list">
+          <li><svg class="i"><use href="#i-compass"/></svg><div><strong>Jornada de desenvolvimento</strong><span>Autoestima, autoimagem e autoconfiança, aplicadas ao amor e à carreira</span></div></li>
+          <li><svg class="i"><use href="#i-users"/></svg><div><strong>Comunidade viva</strong><span>Troca, desafios e conquistas com mulheres no mesmo processo</span></div></li>
+          <li><svg class="i"><use href="#i-messages"/></svg><div><strong>Presença próxima da Thais</strong><span>Lendo e respondendo vocês dentro da comunidade</span></div></li>
+          <li><svg class="i"><use href="#i-radio"/></svg><div><strong>Encontros ao vivo mensais</strong><span>Sobre os temas que as mulheres do Club mais pedirem</span></div></li>
+        </ul>
       </div>
-      <div class="incluso-item">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><strong>Comunidade viva</strong><span class="desc">Espaço para trocar experiências, dividir desafios e celebrar conquistas com mulheres comprometidas com o mesmo processo</span></div>
-      </div>
-      <div class="incluso-item">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><strong>Presença próxima da Thais</strong><span class="desc">Acompanhando, lendo e respondendo vocês dentro da comunidade</span></div>
-      </div>
-      <div class="incluso-item">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><strong>Encontros ao vivo mensais</strong><span class="desc">Aprofundando os temas que as próprias mulheres do Club mais estiverem pedindo</span></div>
-      </div>
-      <p class="preco-valor" style="margin-top:28px">12x de R$41,04</p>
-      <p class="preco-label">ou R$397 à vista no cartão</p>
-      <a href="https://checkout.thebank.com.br/pt-BR/7501706208469504000?cc=BR" class="btn-primary" id="btn-oferta">Quero entrar para o Confidence Club</a>
-      <div class="garantia-mini">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div>
-          <h4>Garantia Incondicional de 7 Dias</h4>
-          <p>Se não for para você, devolvemos 100% do seu investimento</p>
+
+      <div class="offer-buy">
+        <p class="price-label">Seu acesso ao Club</p>
+        <p class="price"><small>12x de</small> R$41,04</p>
+        <p class="price-alt">ou R$397 à vista no cartão</p>
+        <a href="https://checkout.thebank.com.br/pt-BR/7501706208469504000?cc=BR" class="btn btn-gold btn-block" id="btn-oferta">Quero entrar para o Club <svg class="i"><use href="#i-arrow"/></svg></a>
+        <ul class="trust">
+          <li><svg class="i"><use href="#i-lock"/></svg>Pagamento seguro</li>
+          <li><svg class="i"><use href="#i-phone"/></svg>Acesso pelo celular</li>
+        </ul>
+
+        <div class="guarantee">
+          <div class="seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120" class="seal-ring">
+              <defs><path id="seal-path" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+              <text><textPath href="#seal-path">GARANTIA INCONDICIONAL · 7 DIAS · GARANTIA INCONDICIONAL · 7 DIAS ·</textPath></text>
+            </svg>
+            <svg class="i seal-ico"><use href="#i-shield"/></svg>
+          </div>
+          <div>
+            <p class="guarantee-title">Garantia incondicional de 7 dias</p>
+            <p>Se sentir que não é pra você, é só mandar uma mensagem. Devolvemos 100%, sem perguntas.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BANNER DA MARCA -->
-<section style="padding: 0 0 60px;">
-  <img src="img/banner-confidence-club.jpg" alt="The Confidence Club — Thais Ayumi" class="bw-photo">
-</section>
-
-<!-- GARANTIA -->
-<section id="garantia">
-  <div class="container">
-    <div class="garantia-box">
-      <h2>Garantia Incondicional de 7 Dias</h2>
-      <p>Se dentro de 7 dias você sentir que o Confidence Club não é pra você, é só enviar uma mensagem e devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <h2>Perguntas Frequentes</h2>
-    <div class="faq-item">
-      <button class="faq-question">Eu nunca tive confiança na vida. Funciona mesmo assim? <span class="faq-chevron">&#8964;</span></button>
-      <div class="faq-answer">Sim. O Confidence Club foi pensado justamente para isso: confiança não é um traço de personalidade que você nasce tendo, é uma relação com você mesma que se constrói. Quanto mais você sente que "nunca teve isso", mais sentido faz começar agora, dentro de uma comunidade que sustenta esse processo com você.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Como funcionam os encontros ao vivo mensais? <span class="faq-chevron">&#8964;</span></button>
-      <div class="faq-answer">Todo mês acontece um encontro ao vivo dentro da própria plataforma, com temas definidos a partir do que as mulheres da comunidade mais estiverem vivendo e pedindo naquele momento: relacionamentos, limites, comparação, carreira, posicionamento, entre outros.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Por quanto tempo terei acesso? <span class="faq-chevron">&#8964;</span></button>
-      <div class="faq-answer">O acesso e as condições de permanência estão detalhados no checkout no momento da inscrição.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Posso acessar pelo celular? <span class="faq-chevron">&#8964;</span></button>
-      <div class="faq-answer">Sim. A plataforma está disponível em qualquer dispositivo: celular, tablet ou computador.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">O Confidence Club substitui terapia? <span class="faq-chevron">&#8964;</span></button>
-      <div class="faq-answer">Não. O Confidence Club é um espaço de desenvolvimento e comunidade, complementar a um eventual acompanhamento terapêutico individual, não um substituto para ele.</div>
+<section class="sec sec-cream faq">
+  <div class="wrap faq-grid">
+    <header class="sec-head reveal">
+      <p class="overline">Dúvidas</p>
+      <h2>Perguntas <em class="sc">frequentes</em></h2>
+    </header>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Eu nunca tive confiança na vida. Funciona mesmo assim?<svg class="i"><use href="#i-plus"/></svg></summary>
+        <p>Sim. Confiança não é um traço que você nasce tendo, é uma relação com você mesma que se constrói. Quanto mais você sente que “nunca teve isso”, mais sentido faz começar agora, com uma comunidade sustentando o processo com você.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como funcionam os encontros ao vivo mensais?<svg class="i"><use href="#i-plus"/></svg></summary>
+        <p>Todo mês tem um encontro ao vivo na própria plataforma, com temas definidos pelo que as mulheres da comunidade mais estão vivendo: relacionamentos, limites, comparação, carreira, posicionamento e outros.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Por quanto tempo terei acesso?<svg class="i"><use href="#i-plus"/></svg></summary>
+        <p>O acesso e as condições de permanência estão detalhados no checkout, no momento da inscrição.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso acessar pelo celular?<svg class="i"><use href="#i-plus"/></svg></summary>
+        <p>Sim. A plataforma funciona em qualquer dispositivo: celular, tablet ou computador.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O Confidence Club substitui terapia?<svg class="i"><use href="#i-plus"/></svg></summary>
+        <p>Não. É um espaço de desenvolvimento e comunidade, complementar a um acompanhamento terapêutico individual, não um substituto.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section id="cta-final">
-  <img src="img/logo-banner.jpg" alt="The Confidence Club" style="width:100%; display:block; margin-bottom: 40px;">
-  <div class="container">
-    <h2>Você não precisa se tornar essa mulher sozinha.</h2>
+<section class="final">
+  <div class="final-bg" aria-hidden="true"><img src="img/thais-vinho.jpg" alt="" width="700" height="787" loading="lazy"></div>
+  <div class="wrap final-in reveal">
+    <p class="overline overline-gold">O próximo passo é seu</p>
+    <h2>Você não precisa se tornar essa mulher <em class="sc">sozinha.</em></h2>
     <p>Pare de deixar a insegurança escolher seus relacionamentos, limitar sua carreira e decidir até onde você pode ir.</p>
-    <a href="#oferta" class="btn-outline-white">Quero entrar para o Confidence Club</a>
+    <a href="#oferta" class="btn btn-gold">Quero entrar para o Club <svg class="i"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+</main>
+
+<footer class="foot">
+  <img src="img/logo-gold.png" alt="The Confidence Club" width="712" height="156" loading="lazy">
   <p>© 2026 The Confidence Club | Thais Ayumi. Todos os direitos reservados.</p>
   <p>Este programa não substitui acompanhamento terapêutico profissional quando necessário.</p>
 </footer>
 
-<!-- STICKY CTA BAR -->
-<div class="sticky-cta-bar" id="stickyBar">
-  <div class="sticky-price-info">
-    <span class="sticky-price-main">12x R$41,04</span>
-    <span class="sticky-price-parcelas">ou R$397 à vista</span>
-  </div>
-  <a href="#oferta" class="btn-primary">Entrar no Club</a>
+<div class="sticky" id="sticky">
+  <div class="sticky-price"><strong>12x R$41,04</strong><span>ou R$397 à vista</span></div>
+  <a href="#oferta" class="btn btn-gold btn-sm">Entrar no Club <svg class="i"><use href="#i-arrow"/></svg></a>
 </div>
 
-<script>
-// Sticky CTA bar — show after hero, hide when #oferta is visible
-(function() {
-  var bar = document.getElementById('stickyBar');
-  var hero = document.getElementById('hero');
-  var oferta = document.getElementById('oferta');
-  function update() {
-    var heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
-    var ofertaTop = oferta ? oferta.getBoundingClientRect().top : 9999;
-    if (heroBottom < 0 && ofertaTop > window.innerHeight) {
-      bar.classList.add('visible');
-    } else {
-      bar.classList.remove('visible');
-    }
-  }
-  window.addEventListener('scroll', update, {passive: true});
-  update();
-})();
-
-// FAQ accordion — primeiro item aberto por padrão
-document.querySelectorAll('.faq-question').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var item = btn.parentElement;
-    var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-    if (!isOpen) item.classList.add('open');
-  });
-});
-var firstFaq = document.querySelector('.faq-item');
-if (firstFaq) firstFaq.classList.add('open');
-</script>
-
+<script src="js/main.js?v=20261103a" defer></script>
 </body>
 </html>
